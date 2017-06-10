@@ -11,5 +11,9 @@
   "bugs": {
     "url": "https://github.com/sarupbanskota/babel-plugin-add-name-to-plugin/issues"
   },
-  "homepage": "https://github.com/sarupbanskota/babel-plugin-add-name-to-plugin#readme"
+  "homepage": "https://github.com/sarupbanskota/babel-plugin-add-name-to-plugin#readme",
+  "dependencies": {
+    "babel-codemod": "^1.2.0",
+    "babel-register": "^6.24.1"
+  }
 }
