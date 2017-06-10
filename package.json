@@ -1,0 +1,15 @@
+{
+  "name": "babel-plugin-add-name-to-plugin",
+  "version": "1.0.0",
+  "description": "Adds name to Babel plugin if it doesn't have one already",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sarupbanskota/babel-plugin-add-name-to-plugin.git"
+  },
+  "author": "Sarup Banskota <sbanskota08@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sarupbanskota/babel-plugin-add-name-to-plugin/issues"
+  },
+  "homepage": "https://github.com/sarupbanskota/babel-plugin-add-name-to-plugin#readme"
+}
