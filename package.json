@@ -11,5 +11,10 @@
   "bugs": {
     "url": "https://github.com/sarupbanskota/babel-plugin-add-name-to-plugin/issues"
   },
-  "homepage": "https://github.com/sarupbanskota/babel-plugin-add-name-to-plugin#readme"
+  "homepage": "https://github.com/sarupbanskota/babel-plugin-add-name-to-plugin#readme",
+  "devDependencies": {
+    "babel-plugin-syntax-exponentiation-operator": "^6.13.0",
+    "babel-plugin-transform-es2015-arrow-functions": "^6.22.0",
+    "babel-plugin-transform-es2015-block-scoping": "^6.24.1"
+  }
 }
