@@ -16,12 +16,21 @@
 // yarn global add babel-register
 // codemod --require babel-register --plugin src/ test/unnamed_plugins/babel-plugin-syntax-async-functions.js
 export default function({ types: t }) {
+
   return {
     visitor: {
-      ObjectMethod(path) {
-        const nameKey = t.identifier("name");
-        const nameValue = t.stringLiteral("helloworld");
-        path.insertAfter(t.objectProperty(nameKey, nameValue));
+      ExportDefaultDeclaration(path) {
+        const pluginReturn = path    // "ExportDefaultDeclaration"
+          .get('declaration')        // "FunctionDeclaration"
+          .get('body')               // "BlockStatement"
+          .get('body.0')             // "ReturnStatement"
+          .get('argument')           // "ObjectExpression"
+          .get('properties.0');      // "ObjectMethod"
+        if (pluginReturn) {
+          const nameKey = t.identifier("name");
+          const nameValue = t.stringLiteral("pluginName");
+          pluginReturn.insertBefore(t.objectProperty(nameKey, nameValue));
+        }
       }
     }
   }
