@@ -20,13 +20,17 @@ export default function({ types: t }) {
   return {
     visitor: {
       ExportDefaultDeclaration(path) {
-        const pluginReturn = path    // "ExportDefaultDeclaration"
-          .get('declaration')        // "FunctionDeclaration"
-          .get('body')               // "BlockStatement"
-          .get('body.0')             // "ReturnStatement"
-          .get('argument')           // "ObjectExpression"
-          .get('properties.0');      // "ObjectMethod"
-        if (pluginReturn) {
+        let pluginReturn;
+        try {
+          pluginReturn = path          // "ExportDefaultDeclaration"
+            .get('declaration')        // "FunctionDeclaration"
+            .get('body')               // "BlockStatement"
+            .get('body.0')             // "ReturnStatement"
+            .get('argument')           // "ObjectExpression"
+            .get('properties.0');      // "ObjectMethod"
+        } catch(e) {
+          console.log(e);
+        } finally {
           const nameKey = t.identifier("name");
           const nameValue = t.stringLiteral("pluginName");
           pluginReturn.insertBefore(t.objectProperty(nameKey, nameValue));
