@@ -22,12 +22,15 @@ export default function({ types: t }) {
       ExportDefaultDeclaration(path) {
         let pluginReturn;
         try {
-          pluginReturn = path          // "ExportDefaultDeclaration"
-            .get('declaration')        // "FunctionDeclaration"
-            .get('body')               // "BlockStatement"
-            .get('body.0')             // "ReturnStatement"
-            .get('argument')           // "ObjectExpression"
-            .get('properties.0');      // "ObjectMethod"
+          pluginReturn = path.get([
+            "declaration",           // FunctionDeclaration
+            "body",                  // BlockStatement
+            "body",                  // Statements[]
+            "0",                     // ReturnStatement
+            "argument",              // ObjectExpression
+            "properties",            // Properties[]
+            "0"                      // First Prop
+          ].join("."));
         } catch(e) {
           console.log(e);
         } finally {
