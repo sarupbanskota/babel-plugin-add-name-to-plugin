@@ -15,5 +15,8 @@
   "dependencies": {
     "babel-codemod": "^1.2.0",
     "babel-register": "^6.24.1"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.5.2"
   }
 }
