@@ -62,11 +62,13 @@ export default function({ types: t }) {
           console.log(e);
         } finally {
           const nameMissing = pluginProperties ? nameMissingIn(pluginProperties) : null;
-          for(let i=0; i < pluginProperties.length; i++) {
-            if (pluginProperties[i].node.key.name === "visitor") {
-              let objProp = pluginProperties[i];
-              objProp ? objProp.insertBefore(pluginNameObject) : null;
-            }
+          if (nameMissing) {
+            for(let i=0; i < pluginProperties.length; i++) {
+              if (pluginProperties[i].node.key.name === "visitor") {
+                let objProp = pluginProperties[i];
+                objProp ? objProp.insertBefore(pluginNameObject) : null;
+              }
+            }  
           }
         }
       }
