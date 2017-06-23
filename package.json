@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-add-name-to-plugin",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Adds name to Babel plugin if it doesn't have one already",
   "repository": {
     "type": "git",
