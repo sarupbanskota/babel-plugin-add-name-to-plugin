@@ -1,7 +1,12 @@
 # babel-plugin-add-name-to-plugin
-Adds name to babel plugin if it doesn't have one already
+Adds name to babel plugin if it doesn't have one already.
+
+I have an explanation available here.
+
+
+
 
 # Usage
-Clone this repo, get in, install deps, and run:
+Clone this repo, `npm install`, and run:
 
-`$ codemod --require babel-register --plugin src/ test/unnamed_plugins/babel-plugin-syntax-async-functions.js`
+`$ codemod --require babel-register -o index='{"pluginName": "babel-plugin-syntax-async-functions"}' --plugin src/index.js test/unnamed_plugins/babel-plugin-syntax-async-functions.js`
