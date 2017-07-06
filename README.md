@@ -1,7 +1,7 @@
 # babel-plugin-add-name-to-plugin
 Adds name to babel plugin if it doesn't have one already.
 
-I have an explanation available here.
+I have an explanation available [here](https://sarupbanskota.com/programming/babel/2017/06/23/writing-a-babel-codemod-plugin.html).
 
 
 
